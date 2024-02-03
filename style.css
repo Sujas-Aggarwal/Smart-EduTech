@@ -5,13 +5,92 @@ Serious - Poppins
  */
 :root{
     --dark-violet : #645ca1;
-    --dark-blue: rgba(118,228,243,0.72)
+    --dark-blue: rgba(188,228,243,0.72);
+}
+html{
+    width: 100vw;
+    overflow-x: hidden;
 }
 *{
     margin:0;
     padding:0;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 .heading{
     font-family: 'Ribeye';
+    color: var(--dark-violet);
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+}
+/* First Page CSS */
+#sign-in-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+#sign-in-div>h1{
+    font-size: 80px;
+    font-weight: 200;
+}
+#sign-in-input-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    flex-direction: column;
+    gap: 5px;
+}
+#sign-in-input-div label{
+    margin-bottom: 0px;
+    padding-left: 10px;
+    color: var(--dark-violet);
+    font-weight: 600;
+    position: relative;
+
+}
+#sign-in-input-div input{
+    width: 100%;
+    padding: 12px 44px;
+    font-size: 15px;
+    outline: none;
+    border-radius: 40px;
+    border: none;
+    background: var(--dark-blue);
+    caret-color: var(--dark-violet);
+    font-weight: 500;
+
+}
+#sign-in-input-div input::placeholder{
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+}
+#sign-in-input-div button{
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    background: var(--dark-violet);
+    color: white;
+    cursor: pointer;
+}
+#sign-in-input-div button:active{
+background: #48417b;
+}
+
+.input-user-icon{
+    position: absolute;
+    bottom: -38.5px;
+    left: 18px;
+    scale: 1.3;
+    opacity: 0.1;
 }
