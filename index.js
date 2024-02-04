@@ -1,5 +1,6 @@
 // Declaring Main Constants
 let currentPage = 0;
+let totalMarks = 0;
 const main = document.querySelector("main");
 const startButton = document.querySelector("#sign-in-button");
 const nextButton = document.querySelectorAll(".next-button");
@@ -12,8 +13,8 @@ const smallestOptions1 = document.querySelectorAll(
 const smallestOptions2 = document.querySelectorAll(
   "#smallest-num-question-2 span"
 );
-let smallestAnswer1 = null;
-let smallestAnswer2 = null;
+let smallestAnswer1 = false;
+let smallestAnswer2 = false;
 main.style.transform = `translateX(-${currentPage}00vw)`;
 // Adding Page Move Logic
 function NextPage() {
@@ -50,7 +51,12 @@ smallestOptions1.forEach((option) =>
       option.style.color = "black";
     });
     e.target.style.backgroundColor = "var(--dark-violet)";
-    smallestAnswer1 = e.target.innerText;
+    if (e.target.innerText=="23"){
+        smallestAnswer1=true
+    }
+    else{
+        smallestAnswer2= false
+    }
     e.target.style.color = "white";
   })
 );
@@ -61,7 +67,12 @@ smallestOptions2.forEach((option) =>
       option.style.color = "black";
     });
     e.target.style.backgroundColor = "var(--dark-violet)";
-    smallestAnswer2 =  e.target.innerText;
+    if (e.target.innerText=="12"){
+        smallestAnswer2=true
+    }
+    else{
+        smallestAnswer2= false
+    }
     e.target.style.color = "white";
   })
 );

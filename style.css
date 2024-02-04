@@ -170,7 +170,11 @@ background: #48417b;
 .smallest-num-question span:hover{
     background-color: var(--dark-blue);
 }
-
+.fill-question{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width:700px) {
     :root{
         --transition-time : 1.5s;
