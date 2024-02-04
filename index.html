@@ -8,22 +8,79 @@
   </head>
   <body>
     <main>
-        <img src="./assets/bg.svg" class="bg-image">
+      <img src="./assets/bg.svg" class="bg-image" />
       <div id="page-1" class="page">
         <div id="sign-in-div">
           <h1 id="sign-in-text" class="heading">SIGN IN</h1>
           <div id="sign-in-input-div">
             <label for="name" id="name-label">
-                <svg class="input-user-icon" width="14" height="20" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect y="8.39355" width="18.313" height="12.9717" rx="4" fill="rgba(0,0,0,1)"/>
-                    <ellipse cx="9.15673" cy="3.4337" rx="5.3413" ry="3.4337" fill="rgba(0,0,0,1)"/>
-                    </svg>  
-                Please Enter Your Name
+              <svg
+                class="input-user-icon"
+                width="14"
+                height="20"
+                viewBox="0 0 19 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="8.39355"
+                  width="18.313"
+                  height="12.9717"
+                  rx="4"
+                  fill="rgba(0,0,0,1)"
+                />
+                <ellipse
+                  cx="9.15673"
+                  cy="3.4337"
+                  rx="5.3413"
+                  ry="3.4337"
+                  fill="rgba(0,0,0,1)"
+                />
+              </svg>
+              Please Enter Your Name
             </label>
-               
-            <input type="text" id="name" spellcheck="false" placeholder="Enter Your Name Here" />
-            <button id="sign-in-button">Start Your Journey</button>
+
+            <input
+              type="text"
+              id="name"
+              spellcheck="false"
+              placeholder="Enter Your Name Here"
+            />
+            <button id="sign-in-button" class="button">
+              Start Your Journey
+            </button>
           </div>
+        </div>
+      </div>
+      <div class="page" id="page-2">
+        <div class="nav-buttons" style="justify-content:end;">
+          <button class="nav-button next-button button">Save and Next</button>
+        </div>
+        <div class="question-div">
+          <h1 class="heading task-heading">Task 1:</h1>
+          <h2 class="task-sub-heading">
+            Select The Smallest Number from Each Column
+          </h2>
+          <div class="smallest-num-question" id="smallest-num-question-1">
+            <h3 class="question-num">Q1.</h3>
+            <span>23</span><span>54</span><span>65</span><span>34</span>
+          </div>
+          <div class="smallest-num-question" id="smallest-num-question-2">
+            <h3 class="question-num">Q2.</h3>
+            <span>98</span><span>56</span><span>23</span><span>12</span>
+          </div>
+        </div>
+      </div>
+      <div class="page" id="page-3">
+        <div class="nav-buttons">
+          <button class="nav-button prev-button button">Previous</button>
+          <button class="nav-button next-button button">Save and Next</button>
+        </div>
+      </div>
+      <div class="page" id="page-4">
+        <div class="nav-buttons">
+          <button class="nav-button prev-button button">Previous</button>
+          <button class="nav-button next-button button">Save and Next</button>
         </div>
       </div>
     </main>

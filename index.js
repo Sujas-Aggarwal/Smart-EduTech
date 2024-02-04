@@ -1,37 +1,67 @@
 // Declaring Main Constants
-const main = document.querySelector("main")
-const startButton = document.querySelector("#sign-in-button")
-const nextButton = document.querySelectorAll(".next-button")
-const prevButton = document.querySelectorAll(".prev-button")
-const nameInput = document.querySelector("#name")
-const inputIcon = document.querySelector(".input-user-icon")
+let currentPage = 0;
+const main = document.querySelector("main");
+const startButton = document.querySelector("#sign-in-button");
+const nextButton = document.querySelectorAll(".next-button");
+const prevButton = document.querySelectorAll(".prev-button");
+const nameInput = document.querySelector("#name");
+const inputIcon = document.querySelector(".input-user-icon");
+const smallestOptions1 = document.querySelectorAll(
+  "#smallest-num-question-1 span"
+);
+const smallestOptions2 = document.querySelectorAll(
+  "#smallest-num-question-2 span"
+);
+let smallestAnswer1 = null;
+let smallestAnswer2 = null;
+main.style.transform = `translateX(-${currentPage}00vw)`;
 // Adding Page Move Logic
-function NextPage(){
-    main.style.transform = "translateX(-100vw)"
+function NextPage() {
+  main.style.transform = `translateX(-${currentPage + 1}00vw)`;
+  currentPage++;
 }
-function PrevPage(){
-    main.style.transform = "translateX(100vw)"
+function PrevPage() {
+  main.style.transform = `translateX(-${currentPage - 1}00vw)`;
+  currentPage--;
 }
 // Adding Input Logic
 nameInput.onfocus = () => {
-    inputIcon.style.opacity = "0.7"
-    nameInput.placeholder = ""
-}
+  inputIcon.style.opacity = "0.7";
+  nameInput.placeholder = "";
+};
 nameInput.onblur = () => {
-    inputIcon.style.opacity = "0.5"
-    nameInput.placeholder = "Enter Your Name Here"
-}
+  inputIcon.style.opacity = "0.5";
+  nameInput.placeholder = "Enter Your Name Here";
+};
 // Applying Logic and Input Validation
-startButton.addEventListener("click", NextPage)
-startButton.addEventListener("mouseover", () => {
-    if (nameInput.value===""){
-        startButton.disabled = true
-        startButton.style.cursor = "not-allowed"
-    }
-    else{
-        startButton.disabled = false
-        startButton.style.cursor = "pointer"
-    }
-})
-nextButton.forEach(button => button.addEventListener("click", NextPage))
-prevButton.forEach(button => button.addEventListener("click", PrevPage))
+startButton.addEventListener("click", () => {
+  if (nameInput.value) {
+    NextPage();
+    console.log("moved");
+    console.log(currentPage);
+  }
+});
+nextButton.forEach((button) => button.addEventListener("click", NextPage));
+prevButton.forEach((button) => button.addEventListener("click", PrevPage));
+smallestOptions1.forEach((option) =>
+  option.addEventListener("click", (e) => {
+    smallestOptions1.forEach((option) => {
+      option.style.backgroundColor = "transparent";
+      option.style.color = "black";
+    });
+    e.target.style.backgroundColor = "var(--dark-violet)";
+    smallestAnswer1 = e.target.innerText;
+    e.target.style.color = "white";
+  })
+);
+smallestOptions2.forEach((option) =>
+  option.addEventListener("click", (e) => {
+    smallestOptions2.forEach((option) => {
+      option.style.backgroundColor = "transparent";
+      option.style.color = "black";
+    });
+    e.target.style.backgroundColor = "var(--dark-violet)";
+    smallestAnswer2 =  e.target.innerText;
+    e.target.style.color = "white";
+  })
+);

@@ -6,7 +6,7 @@ Serious - Poppins
 :root{
     --dark-violet : #645ca1;
     --dark-blue: rgba(188,228,243,1);
-    --transition-time : 2.5s;
+    --transition-time : 1.5s;
 }
 html{
     width: 100vw;
@@ -29,7 +29,7 @@ main{
     width: 400vw;
     height: 100vh;
     position: relative;
-    transform: translateX(0);
+    transform: translateX(0vw);
     transition-duration: var(--transition-time);
     transition-property: transform;
     transition-timing-function: ease-out;
@@ -42,6 +42,9 @@ main{
     width: 100vw;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* First Page CSS */
 #sign-in-div{
@@ -98,13 +101,15 @@ main{
     padding: 12px;
     font-size: 15px;
     border-radius: 40px;
+}
+.button{
     outline: none;
     border: none;
     background: var(--dark-violet);
     color: white;
     cursor: pointer;
 }
-#sign-in-input-div button:active{
+.button:active{
 background: #48417b;
 }
 
@@ -122,6 +127,50 @@ background: #48417b;
     top: -20%;
     min-height: 100vh;
 }
+.question-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.task-heading{
+    align-self: start;
+}
+.smallest-num-question{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.question-num{
+    color: var(--dark-violet);
+    font-size: 22px;
+}
+.smallest-num-question span{
+    padding:8px 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(113, 113, 113);
+    cursor: pointer;
+    font-size: 18px;
+}
+.nav-buttons{
+    position: absolute;
+    bottom: 10%;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.smallest-num-question span:hover{
+    background-color: var(--dark-blue);
+}
+
 @media screen and (max-width:700px) {
     :root{
         --transition-time : 1.5s;
